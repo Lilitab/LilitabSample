@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2at-vA-DdN">
+                                <rect key="frame" x="243" y="70" width="115" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="Hoh-gc-IiU"/>
+                                    <constraint firstAttribute="height" constant="30" id="sXs-cm-yi7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Status"/>
+                                <connections>
+                                    <action selector="buttonStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jb8-Zm-aXc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f5-ct-Bgt">
+                                <rect key="frame" x="243" y="130" width="115" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="XoD-np-xEw"/>
+                                    <constraint firstAttribute="height" constant="30" id="mIS-s7-l7O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Enable Swipe"/>
+                                <connections>
+                                    <action selector="buttonSwipe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4S-Gs-p8g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4y-vX-w7i" userLabel="LED Button">
+                                <rect key="frame" x="243" y="190" width="115" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="fM8-aP-fbj"/>
+                                    <constraint firstAttribute="height" constant="30" id="vW1-Tq-xTj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="LED"/>
+                                <connections>
+                                    <action selector="buttonLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tTT-9H-WU7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-g1-sg9">
+                                <rect key="frame" x="20" y="250" width="560" height="330"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Use MynaBay's Endo debugging console to see logging output.    In Mac App Store:  https://itunes.apple.com/us/app/endo-lite/id1084870497?mt=12  https://itunes.apple.com/us/app/endo/id1049342308?mt=12</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a4y-vX-w7i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1zN-C5-jfg"/>
+                            <constraint firstItem="Md7-g1-sg9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="27b-y9-6xa"/>
+                            <constraint firstItem="Md7-g1-sg9" firstAttribute="top" secondItem="a4y-vX-w7i" secondAttribute="bottom" constant="30" id="BtQ-2S-ZQp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Md7-g1-sg9" secondAttribute="bottom" constant="20" id="EEG-SL-vWa"/>
+                            <constraint firstItem="Md7-g1-sg9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OOg-nf-25z"/>
+                            <constraint firstItem="1f5-ct-Bgt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Slc-C4-QxC"/>
+                            <constraint firstItem="1f5-ct-Bgt" firstAttribute="top" secondItem="2at-vA-DdN" secondAttribute="bottom" constant="30" id="awa-2u-fGx"/>
+                            <constraint firstItem="2at-vA-DdN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="gSV-Ys-Yt7"/>
+                            <constraint firstItem="2at-vA-DdN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kvB-xj-FFW"/>
+                            <constraint firstItem="a4y-vX-w7i" firstAttribute="top" secondItem="1f5-ct-Bgt" secondAttribute="bottom" constant="30" id="xBn-jj-aBk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ledButton" destination="a4y-vX-w7i" id="4pK-DA-Kgg"/>
+                        <outlet property="statusButton" destination="2at-vA-DdN" id="dSd-xf-FAn"/>
+                        <outlet property="swipeButton" destination="1f5-ct-Bgt" id="fid-vA-1To"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="451"/>
+        </scene>
+    </scenes>
+</document>

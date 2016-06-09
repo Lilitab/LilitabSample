@@ -1,0 +1,39 @@
+
+To use Endo in a project:
+
+- Drag and drop the EndoClient.framework onto the project (Check copy items if needed).
+- Add EndoClient.framework to the "Embedded Binaries" build setting under "General".
+- If project has prefix header add "#import <EndoClient/EndoClient.h>"  to it.
+    or
+- Add "#import <EndoClient/EndoClient.h>" to any ObjC file and uses Endo's logging functions.
+- Add call to "EndoStartStop(YES);" to AppDelegate's didFinishLaunchingWithOptions.
+- Endo will work on device and simulator.
+- For Swift projects, add the file EndoClient.framework/headers/EndoClient.swift to the project. This provides the Swift wrappers.
+
+
+
+At ship time there are a few choices; ship with Endo enabled, ship with Endo disabled or ship without Endo.
+
+
+Ship with Endo enabled:
+- We do not recommend this for apps shipping to customers. It would provide end users the ability to see app's internals and modify the file system.
+- For TestFlight builds going to beta testers this is appropriate. We do it all the time!
+
+
+Ship with Endo disabled:
+- We recommend that you ship with Endo embedded but disabled. Endo initializes on the first call to EndoStartStop(). The best way to
+  keep Endo disabled it to never call EndoStartStop. There is no application performance impact when used in the fashion and it routes
+  all logging to NSLog(). NSLog routing can be stopped by setting EndoNSLogPassthrough(NO).
+  EndoNSLogPassthrough is the only Endo function that works when uninitialized.
+
+
+Ship with Endo removed:
+- This is an OK option for ship. You could remove all Endo references or use the preprocessor (ObjC only) to remove Endo.
+- This option becomes a fair amount of code changes, thus not recommended.
+
+
+
+To upload a build to iTunesConnect with Endo:
+
+- Add a final "Run Script" phase to the "Build Phases" settings to execute the shell script "./EndoClient.framework/Headers/EndoStripForAppStore.sh".
+  This will strip the x86 code from Endo and make it acceptable by Apple. This only needs to run for archive builds intended to be uploaded.
