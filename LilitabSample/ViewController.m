@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <EndoClient/EndoClient.h>
-#import "LiliswipeSDK.h"
+#import <LilitabSDK/LilitabSDK.h>
 
 
 
@@ -27,7 +27,7 @@
 -(IBAction) buttonStatus:(id)sender
 {
     EndoLog(@"Requesting status from reader");
-    [[Liliswipe sharedSwipe] status:^(BOOL success, NSDictionary* results)
+    [[Liliswipe singleton] status:^(BOOL success, NSDictionary* results)
                                     {
                                         EndoLog(@"status = %@",results);
                                     }];
@@ -35,9 +35,9 @@
 
 -(IBAction) buttonSwipe:(id)sender
 {
-    [Liliswipe sharedSwipe].enableSwipe = ![Liliswipe sharedSwipe].enableSwipe;
+    [Liliswipe singleton].enableSwipe = ![Liliswipe singleton].enableSwipe;
     
-    if( [Liliswipe sharedSwipe].enableSwipe )
+    if( [Liliswipe singleton].enableSwipe )
     {
         EndoLog(@"Enabled swiping");
         [sender setTitle:@"Disable Swipe" forState:UIControlStateNormal];
@@ -49,11 +49,11 @@
 
 -(IBAction) buttonLED:(id)sender
 {
-    if( [Liliswipe sharedSwipe].ledState == LED_Off )
+    if( [Liliswipe singleton].ledState == LED_Off )
     {
-        [Liliswipe sharedSwipe].ledState = LED_On;
+        [Liliswipe singleton].ledState = LED_On;
     }else{
-        [Liliswipe sharedSwipe].ledState = LED_Off;
+        [Liliswipe singleton].ledState = LED_Off;
     }
 }
 
@@ -65,8 +65,8 @@
     self.swipeButton.enabled = YES;
     self.ledButton.enabled = YES;
     
-    [Liliswipe sharedSwipe].swipeTimeout = 10;
-    [Liliswipe sharedSwipe].swipeBlock = ^(NSDictionary* swipeData)
+    [Liliswipe singleton].swipeTimeout = 10;
+    [Liliswipe singleton].swipeBlock = ^(NSDictionary* swipeData)
                                         {
                                             EndoLog(@"swipeData = %@",swipeData);
                                             
@@ -84,7 +84,7 @@
     
     [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
     
-    [Liliswipe sharedSwipe].swipeBlock = NULL;
+    [Liliswipe singleton].swipeBlock = NULL;
 }
 
 -(void) viewDidLoad
@@ -101,7 +101,7 @@
                                                  name:Liliswipe_DidDisconnectNotification
                                                object:nil];
     
-    [Liliswipe sharedSwipe].enableAttachmentNotification = YES;
+    [Liliswipe singleton].enableAttachmentNotification = YES;
 }
 
 @end

@@ -13,9 +13,10 @@
 		0A19FFE01D08B5A900B98414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFDE1D08B5A900B98414 /* Main.storyboard */; };
 		0A19FFE21D08B5A900B98414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE11D08B5A900B98414 /* Assets.xcassets */; };
 		0A19FFE51D08B5A900B98414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE31D08B5A900B98414 /* LaunchScreen.storyboard */; };
-		0A19FFEE1D08B79800B98414 /* libLiliswipeSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19FFEC1D08B79800B98414 /* libLiliswipeSDK.a */; };
 		0A19FFF21D08B85A00B98414 /* EndoClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19FFF11D08B85A00B98414 /* EndoClient.framework */; };
 		0A19FFF41D08BD1500B98414 /* EndoClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A19FFF11D08B85A00B98414 /* EndoClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0AFAD9B61D11D1AB0016E17A /* LilitabSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */; };
+		0AFAD9B81D11D2240016E17A /* LilitabSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				0A19FFF41D08BD1500B98414 /* EndoClient.framework in Embed Frameworks */,
+				0AFAD9B81D11D2240016E17A /* LilitabSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,9 +45,8 @@
 		0A19FFE11D08B5A900B98414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A19FFE41D08B5A900B98414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A19FFE61D08B5A900B98414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A19FFEC1D08B79800B98414 /* libLiliswipeSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLiliswipeSDK.a; sourceTree = "<group>"; };
-		0A19FFED1D08B79800B98414 /* LiliswipeSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiliswipeSDK.h; sourceTree = "<group>"; };
 		0A19FFF11D08B85A00B98414 /* EndoClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EndoClient.framework; sourceTree = "<group>"; };
+		0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LilitabSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A19FFEE1D08B79800B98414 /* libLiliswipeSDK.a in Frameworks */,
 				0A19FFF21D08B85A00B98414 /* EndoClient.framework in Frameworks */,
+				0AFAD9B61D11D1AB0016E17A /* LilitabSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +107,7 @@
 		0A19FFEF1D08B79B00B98414 /* LilitabSDK */ = {
 			isa = PBXGroup;
 			children = (
-				0A19FFED1D08B79800B98414 /* LiliswipeSDK.h */,
-				0A19FFEC1D08B79800B98414 /* libLiliswipeSDK.a */,
+				0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */,
 			);
 			name = LilitabSDK;
 			sourceTree = "<group>";
@@ -364,6 +364,7 @@
 				0A19FFEB1D08B5A900B98414 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
