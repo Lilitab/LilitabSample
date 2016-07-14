@@ -102,6 +102,8 @@
                                                object:nil];
     
     [Liliswipe singleton].enableAttachmentNotification = YES;
+    
+    [LilitabSDK singleton].ledState = LED_Off;
 }
 
 @end
