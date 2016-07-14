@@ -8,10 +8,6 @@
 		<data>
 		9svcYetw7ucPA2uVX+sKC0DzCfk=
 		</data>
-		<key>Headers/EndoClient.NULL.swift</key>
-		<data>
-		+AO3XMarIZP7d6pNO08vhIaukI8=
-		</data>
 		<key>Headers/EndoClient.h</key>
 		<data>
 		qx/siKHnT9j2JPXRj++OQBQpxQ4=
@@ -26,47 +22,100 @@
 		</data>
 		<key>Headers/READ-ME.txt</key>
 		<data>
-		5NYEF4EeMt+KU1u6fKr07jm4g34=
+		M8QP2rxnpxflPKk3uOpl6A9Kslk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Y/V8Fjo3PWBOZaS/58O011hDLjg=
+		XVEQKe7ZbHTY8AKzRZvg6Htpr0Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		638ifyfQbcj0lMBheujrBzMsGQM=
+		</data>
+		<key>READ-ME.txt</key>
+		<data>
+		M8QP2rxnpxflPKk3uOpl6A9Kslk=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/EndoAPI.h</key>
-		<data>
-		9svcYetw7ucPA2uVX+sKC0DzCfk=
-		</data>
-		<key>Headers/EndoClient.NULL.swift</key>
-		<data>
-		+AO3XMarIZP7d6pNO08vhIaukI8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			9svcYetw7ucPA2uVX+sKC0DzCfk=
+			</data>
+			<key>hash2</key>
+			<data>
+			reppkHl7+43P0W4kVAU1sroggEYjbdwbZvtCToP3qjE=
+			</data>
+		</dict>
 		<key>Headers/EndoClient.h</key>
-		<data>
-		qx/siKHnT9j2JPXRj++OQBQpxQ4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			qx/siKHnT9j2JPXRj++OQBQpxQ4=
+			</data>
+			<key>hash2</key>
+			<data>
+			gN8Rqre1tWC0LkJNsLSSz0o6hEPnjKQxkAo4uRSE9n0=
+			</data>
+		</dict>
 		<key>Headers/EndoClient.swift</key>
-		<data>
-		u784GWp5bHwKyjWeUTrn8wCBnm4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			u784GWp5bHwKyjWeUTrn8wCBnm4=
+			</data>
+			<key>hash2</key>
+			<data>
+			6RnCzD4sTRCEppTBOGhT9BhEePJEtBgYQ5wKdPrDnyc=
+			</data>
+		</dict>
 		<key>Headers/EndoStripForAppStore.sh</key>
-		<data>
-		nhVZ+p5eDtmfaFS44rVdvsWNMEI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			nhVZ+p5eDtmfaFS44rVdvsWNMEI=
+			</data>
+			<key>hash2</key>
+			<data>
+			bFxYOT5hD9+XVldizUBVl4wWr5/6tD7aeVABueEysBc=
+			</data>
+		</dict>
 		<key>Headers/READ-ME.txt</key>
-		<data>
-		5NYEF4EeMt+KU1u6fKr07jm4g34=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			M8QP2rxnpxflPKk3uOpl6A9Kslk=
+			</data>
+			<key>hash2</key>
+			<data>
+			YJKL5BAfb8sM/k47S18Li17747opZ4kDtrxEXk4PyCw=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		638ifyfQbcj0lMBheujrBzMsGQM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			638ifyfQbcj0lMBheujrBzMsGQM=
+			</data>
+			<key>hash2</key>
+			<data>
+			7yKx/oQJeHcXoOLNa992/Dqris+UBivdn+n3JDzq+PQ=
+			</data>
+		</dict>
+		<key>READ-ME.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			M8QP2rxnpxflPKk3uOpl6A9Kslk=
+			</data>
+			<key>hash2</key>
+			<data>
+			YJKL5BAfb8sM/k47S18Li17747opZ4kDtrxEXk4PyCw=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
