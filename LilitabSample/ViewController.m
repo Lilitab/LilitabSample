@@ -27,7 +27,7 @@
 -(IBAction) buttonStatus:(id)sender
 {
     EndoLog(@"Requesting status from reader");
-    [[Liliswipe singleton] status:^(BOOL success, NSDictionary* results)
+    [[LilitabSDK singleton] status:^(BOOL success, NSDictionary* results)
                                     {
                                         EndoLog(@"status = %@",results);
                                     }];
@@ -35,9 +35,9 @@
 
 -(IBAction) buttonSwipe:(id)sender
 {
-    [Liliswipe singleton].enableSwipe = ![Liliswipe singleton].enableSwipe;
+    [LilitabSDK singleton].enableSwipe = ![LilitabSDK singleton].enableSwipe;
     
-    if( [Liliswipe singleton].enableSwipe )
+    if( [LilitabSDK singleton].enableSwipe )
     {
         EndoLog(@"Enabled swiping");
         [sender setTitle:@"Disable Swipe" forState:UIControlStateNormal];
@@ -49,11 +49,11 @@
 
 -(IBAction) buttonLED:(id)sender
 {
-    if( [Liliswipe singleton].ledState == LED_Off )
+    if( [LilitabSDK singleton].ledState == LED_Off )
     {
-        [Liliswipe singleton].ledState = LED_On;
+        [LilitabSDK singleton].ledState = LED_On;
     }else{
-        [Liliswipe singleton].ledState = LED_Off;
+        [LilitabSDK singleton].ledState = LED_Off;
     }
 }
 
@@ -65,8 +65,8 @@
     self.swipeButton.enabled = YES;
     self.ledButton.enabled = YES;
     
-    [Liliswipe singleton].swipeTimeout = 10;
-    [Liliswipe singleton].swipeBlock = ^(NSDictionary* swipeData)
+    [LilitabSDK singleton].swipeTimeout = 10;
+    [LilitabSDK singleton].swipeBlock = ^(NSDictionary* swipeData)
                                         {
                                             EndoLog(@"swipeData = %@",swipeData);
                                             
@@ -84,7 +84,7 @@
     
     [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
     
-    [Liliswipe singleton].swipeBlock = NULL;
+    [LilitabSDK singleton].swipeBlock = NULL;
 }
 
 -(void) viewDidLoad
@@ -93,15 +93,15 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(accessoryDidConnect:)
-                                                 name:Liliswipe_DidConnectNotification
+                                                 name:LilitabSDK_DidConnectNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(accessoryDidDisconnect:)
-                                                 name:Liliswipe_DidDisconnectNotification
+                                                 name:LilitabSDK_DidDisconnectNotification
                                                object:nil];
     
-    [Liliswipe singleton].enableAttachmentNotification = YES;
+    [[LilitabSDK singleton] scanForConnectedAccessories];
     
     [LilitabSDK singleton].ledState = LED_Off;
 }
