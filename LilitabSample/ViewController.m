@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <EndoClient/EndoClient.h>
 #import <LilitabSDK/LilitabSDK.h>
 
 
@@ -26,10 +25,9 @@
 
 -(IBAction) buttonStatus:(id)sender
 {
-    EndoLog(@"Requesting status from reader");
     [[LilitabSDK singleton] status:^(BOOL success, NSDictionary* results)
                                     {
-                                        EndoLog(@"status = %@",results);
+                                        NSLog(@"status = %@",results);
                                     }];
 }
 
@@ -39,10 +37,8 @@
     
     if( [LilitabSDK singleton].enableSwipe )
     {
-        EndoLog(@"Enabled swiping");
         [sender setTitle:@"Disable Swipe" forState:UIControlStateNormal];
     }else{
-        EndoLog(@"Disabled swiping");
         [sender setTitle:@"Enable Swipe" forState:UIControlStateNormal];
     }
 }
@@ -59,7 +55,7 @@
 
 -(void) accessoryDidConnect:(NSNotification*)notification
 {
-    EndoLog(@"accessoryDidConnect");
+    NSLog(@"accessoryDidConnect");
     
     self.statusButton.enabled = YES;
     self.swipeButton.enabled = YES;
@@ -68,7 +64,7 @@
     [LilitabSDK singleton].swipeTimeout = 10;
     [LilitabSDK singleton].swipeBlock = ^(NSDictionary* swipeData)
                                         {
-                                            EndoLog(@"swipeData = %@",swipeData);
+                                            NSLog(@"swipeData = %@",swipeData);
                                             
                                             [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
                                         };
@@ -76,7 +72,7 @@
 
 -(void) accessoryDidDisconnect:(NSNotification*)notification
 {
-    EndoLog(@"accessoryDidDisconnect");
+    NSLog(@"accessoryDidDisconnect");
     
     self.statusButton.enabled = NO;
     self.swipeButton.enabled = NO;

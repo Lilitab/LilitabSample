@@ -3,21 +3,23 @@
 //  LilitabSDK
 //
 //  Created by Kevin Snow on 6/28/14.
-//  Copyright (c) 2014 Lilitab. All rights reserved.
+//  Copyright (c) 2014-2018 Lilitab. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
     // Accessory Types
-typedef NS_ENUM(NSInteger, Lilitab_Accessory_Type)
+typedef NS_ENUM(NSInteger)
 {
     LILITAB_NO_ACCESSORY,
     LILITAB_SWIPE,
-    LILITAB_DOCK
-};
+    LILITAB_DOCK,
+    LILITAB_eDynamo,
+} Lilitab_Accessory_Type;
 
     // LED states
-typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
+typedef NS_ENUM(NSInteger)
 {
     LED_Off,
     LED_On,
@@ -27,7 +29,7 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
     LED_Blink4,
     LED_SwipeForward,
     LED_SwipeReverse
-};
+} LilitabSDK_LED_Mode;
 
     // Names used with NSNotificationCenter to be notified of dock status events
 #define     LilitabSDK_DockStatusNotification           @"LilitabSDK-DockStatusNotification"
@@ -46,9 +48,28 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
 
 
     /////////////////////////////////////////////////////////////////////
+    // singleton - Singleton object for communication with lilitab accessories
+    //
++(NSNotificationName) didConnectNotification;
++(NSNotificationName) didDisconnectNotification;
++(NSNotificationName) dockStatusNotification;
++(NSNotificationName) swipeEnableChangeNotification;
++(NSNotificationName) readerStatusNotification;
+
+
+    /////////////////////////////////////////////////////////////////////
     // accessoryType - Type of Lilitab accessory attached.
     //
 @property (nonatomic,readonly) Lilitab_Accessory_Type accessoryType;
+
+
+    /////////////////////////////////////////////////////////////////////
+    // eDynamoSerialNumber - Serial number of eDynamo to attach to.
+    //
+-(void) scanBLEDevices:(void(^)(CBPeripheral* peripheral))scanBlock;    // eDynamo.
+-(void) stopBLEScan;
+-(void) selectBLEDevice:(CBPeripheral*)peripheral;
+-(CBPeripheral*) selectedBLEDevice;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -71,12 +92,6 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
 
 
     /////////////////////////////////////////////////////////////////////
-    // setHeadTimeTo - Time passed to the card reader head.
-    //
--(void) setHeadTimeTo:(NSDate*)date;
-
-
-    /////////////////////////////////////////////////////////////////////
     // noPowerBlinkDuration - Controls the duration between blinks in
     // milliseconds if not power is present. Defaults to 0 (no blink)
     //
@@ -89,10 +104,10 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
     // After enabling swipe, it stays active until a swipe, timeout or error.
     // A timeout of 0 is infinite
     //
-@property (nonatomic,copy)                    void(^swipeBlock)(NSDictionary* swipeData);
+@property (atomic,copy)                    void(^swipeBlock)(NSDictionary* swipeData);
 @property (nonatomic,assign)    BOOL                enableSwipe;            // default: NO
-@property (nonatomic,assign)    BOOL                allowMultipleSwipes;    // default: NO
-@property (nonatomic,assign)    NSTimeInterval      swipeTimeout;
+@property (atomic,assign)       BOOL                allowMultipleSwipes;    // default: NO
+@property (atomic,assign)    NSTimeInterval         swipeTimeout;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -107,6 +122,7 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
     //
 -(void) lockWithCompletion:(void (^)(BOOL success))completionBlock;
 -(void) unlockWithCompletion:(void (^)(BOOL success))completionBlock;
+@property (atomic,readonly)     BOOL                dockHasPower;
 
 
     /////////////////////////////////////////////////////////////////////
@@ -134,10 +150,38 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
 
 
     /////////////////////////////////////////////////////////////////////
+    // disconnectOnAppResign
+    //
+    // Disconnect from accessory when app resigns. 
+@property (nonatomic,assign)    BOOL    disconnectOnAppResign;
+
+
+    /////////////////////////////////////////////////////////////////////
+    // sendReaderCommand - Send commands to the embedded card reader.
+    //
+-(void) sendReaderCommand:(NSData*)cmdData withCompletion:(void (^)(BOOL success,NSDictionary* results))completionBlock;
+
+
+    /////////////////////////////////////////////////////////////////////
     // version - return a version string of the library
     //
 @property (nonatomic,readonly)  NSString*  version;
 
+
+    /////////////////////////////////////////////////////////////////////
+    // setHeadTimeTo - Time passed to the card reader head. (DEPRECATED)
+    //
+    // Most developers will NOT need this call. Reader head time is
+    // maintained by SDK.
+    // Use only if reader head needs a date other than NOW.
+    // To clear a date, call with NULL (restores automatic maintainence)
+    //
+-(void) setHeadTimeTo:(NSDate*)date;
+
+
+    /////////////////////////////////////////////////////////////////////
+    /////////// DO NOT USE CALLS BELOW HERE IN APPLICATIONS /////////////
+    /////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////////
     // debugMessages - Have library pass debug strings to app.
@@ -148,14 +192,9 @@ typedef NS_ENUM(NSInteger, LilitabSDK_LED_Mode)
 
 
     /////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////
-
-    /////////////////////////////////////////////////////////////////////
     // INTERNAL - Testing functions
     //
 -(void) sendCommand:(NSString*)cmd withCompletion:(void (^)(BOOL success,NSDictionary* results))completionBlock;
--(void) testFlashWithCompletion:(void (^)(BOOL success,NSDictionary* results))completionBlock;
 
     /////////////////////////////////////////////////////////////////////
 
