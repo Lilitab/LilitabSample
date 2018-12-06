@@ -16,6 +16,7 @@
 @property (nonatomic,weak) IBOutlet UIButton* statusButton;
 @property (nonatomic,weak) IBOutlet UIButton* swipeButton;
 @property (nonatomic,weak) IBOutlet UIButton* ledButton;
+@property (nonatomic,weak) IBOutlet UITextView* outputTextView;
 
 @end
 
@@ -28,6 +29,7 @@
     [[LilitabSDK singleton] status:^(BOOL success, NSDictionary* results)
                                     {
                                         NSLog(@"status = %@",results);
+                                        self.outputTextView.text = [NSString stringWithFormat:@"status = %@",results];
                                     }];
 }
 
@@ -65,6 +67,7 @@
     [LilitabSDK singleton].swipeBlock = ^(NSDictionary* swipeData)
                                         {
                                             NSLog(@"swipeData = %@",swipeData);
+                                            self.outputTextView.text = [NSString stringWithFormat:@"swipeData = %@",swipeData];
                                             
                                             [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
                                         };
@@ -81,6 +84,11 @@
     [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
     
     [LilitabSDK singleton].swipeBlock = NULL;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    self.outputTextView.text = [NSString stringWithFormat:@"LilitabSDK version %@",LilitabSDK.singleton.version];
 }
 
 -(void) viewDidLoad

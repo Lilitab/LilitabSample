@@ -14,7 +14,6 @@ FOUNDATION_EXPORT double LilitabSDKVersionNumber;
 //! Project version string for LilitabSDK.
 FOUNDATION_EXPORT const unsigned char LilitabSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <LilitabSDK/PublicHeader.h>
 #import <LilitabSDK/LilitabAccessory.h>
 #import <LilitabSDK/LilitabSignatureView.h>
 #import <LilitabSDK/LilitabSignatureOverlayView.h>
@@ -22,3 +21,15 @@ FOUNDATION_EXPORT const unsigned char LilitabSDKVersionString[];
 #import <LilitabSDK/LilitabSwipeAnimationOverlayView.h>
 #import <LilitabSDK/LilitabBLEHelpView.h>
 #import <LilitabSDK/LilitabBLEHelpOverlayView.h>
+
+#import <LilitabSDK/KMS.h>
+#import <LilitabSDK/KMSGeolocateButton.h>
+#import <LilitabSDK/KMSHelpButton.h>
+#import <LilitabSDK/KMSHomeButton.h>
+#import <LilitabSDK/KMSMenuButton.h>
+#import <LilitabSDK/KMSUnlockButton.h>
+#import <LilitabSDK/KMSWebView.h>
+#import <LilitabSDK/KMSLockIconView.h>
+#import <LilitabSDK/KMSDockFirmwareUpdateView.h>
+#import <LilitabSDK/KMSBarcodeScanView.h>
+#import <LilitabSDK/KMSBarcodeScanOverlayView.h>
