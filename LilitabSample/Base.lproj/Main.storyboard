@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,10 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2at-vA-DdN">
-                                <rect key="frame" x="130" y="70" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2at-vA-DdN">
+                                <rect key="frame" x="161.5" y="50" width="52" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="Hoh-gc-IiU"/>
                                     <constraint firstAttribute="height" constant="30" id="sXs-cm-yi7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -33,10 +30,9 @@
                                     <action selector="buttonStatus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jb8-Zm-aXc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f5-ct-Bgt">
-                                <rect key="frame" x="130" y="130" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f5-ct-Bgt">
+                                <rect key="frame" x="133.5" y="110" width="108" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="XoD-np-xEw"/>
                                     <constraint firstAttribute="height" constant="30" id="mIS-s7-l7O"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -45,10 +41,9 @@
                                     <action selector="buttonSwipe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4S-Gs-p8g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4y-vX-w7i" userLabel="LED Button">
-                                <rect key="frame" x="130" y="190" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4y-vX-w7i" userLabel="LED Button">
+                                <rect key="frame" x="171" y="170" width="33" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="fM8-aP-fbj"/>
                                     <constraint firstAttribute="height" constant="30" id="vW1-Tq-xTj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -57,38 +52,38 @@
                                     <action selector="buttonLED:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tTT-9H-WU7"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-g1-sg9">
-                                <rect key="frame" x="16" y="250" width="343" height="397"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I85-ZG-uoY">
+                                <rect key="frame" x="16" y="208" width="350" height="439"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a4y-vX-w7i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1zN-C5-jfg"/>
-                            <constraint firstItem="Md7-g1-sg9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="27b-y9-6xa"/>
-                            <constraint firstItem="Md7-g1-sg9" firstAttribute="top" secondItem="a4y-vX-w7i" secondAttribute="bottom" constant="30" id="BtQ-2S-ZQp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Md7-g1-sg9" secondAttribute="bottom" constant="20" id="EEG-SL-vWa"/>
-                            <constraint firstItem="Md7-g1-sg9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OOg-nf-25z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I85-ZG-uoY" secondAttribute="bottom" constant="20" id="5Ud-Cl-O8O"/>
                             <constraint firstItem="1f5-ct-Bgt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Slc-C4-QxC"/>
                             <constraint firstItem="1f5-ct-Bgt" firstAttribute="top" secondItem="2at-vA-DdN" secondAttribute="bottom" constant="30" id="awa-2u-fGx"/>
                             <constraint firstItem="2at-vA-DdN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="gSV-Ys-Yt7"/>
                             <constraint firstItem="2at-vA-DdN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kvB-xj-FFW"/>
+                            <constraint firstAttribute="trailing" secondItem="I85-ZG-uoY" secondAttribute="trailing" constant="9" id="q21-aV-Zr3"/>
+                            <constraint firstItem="I85-ZG-uoY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="qK5-0e-8Ag"/>
+                            <constraint firstItem="I85-ZG-uoY" firstAttribute="top" secondItem="a4y-vX-w7i" secondAttribute="bottom" constant="8" symbolic="YES" id="wY3-RD-fA7"/>
                             <constraint firstItem="a4y-vX-w7i" firstAttribute="top" secondItem="1f5-ct-Bgt" secondAttribute="bottom" constant="30" id="xBn-jj-aBk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ledButton" destination="a4y-vX-w7i" id="4pK-DA-Kgg"/>
-                        <outlet property="outputTextView" destination="Md7-g1-sg9" id="Id3-gy-yKT"/>
+                        <outlet property="outputTextView" destination="I85-ZG-uoY" id="lNp-05-gC5"/>
                         <outlet property="statusButton" destination="2at-vA-DdN" id="dSd-xf-FAn"/>
                         <outlet property="swipeButton" destination="1f5-ct-Bgt" id="fid-vA-1To"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466" y="451"/>
+            <point key="canvasLocation" x="464.80000000000001" y="450.22488755622192"/>
         </scene>
     </scenes>
 </document>

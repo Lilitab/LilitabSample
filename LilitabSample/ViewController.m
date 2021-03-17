@@ -26,32 +26,42 @@
 
 -(IBAction) buttonStatus:(id)sender
 {
-    [[LilitabSDK singleton] status:^(BOOL success, NSDictionary* results)
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    [acc info:^(BOOL success, NSDictionary* results)
                                     {
-                                        NSLog(@"status = %@",results);
-                                        self.outputTextView.text = [NSString stringWithFormat:@"status = %@",results];
+                                        NSLog(@"info = %@",results);
+                                        self.outputTextView.text = [NSString stringWithFormat:@"info = %@",results];
                                     }];
 }
 
 -(IBAction) buttonSwipe:(id)sender
 {
-    [LilitabSDK singleton].enableSwipe = ![LilitabSDK singleton].enableSwipe;
-    
-    if( [LilitabSDK singleton].enableSwipe )
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    if( acc != nil )
     {
-        [sender setTitle:@"Disable Swipe" forState:UIControlStateNormal];
-    }else{
-        [sender setTitle:@"Enable Swipe" forState:UIControlStateNormal];
+        acc.enableSwipe = !acc.enableSwipe;
+        
+        if( acc.enableSwipe )
+        {
+            [sender setTitle:@"Disable Swipe" forState:UIControlStateNormal];
+        }else{
+            [sender setTitle:@"Enable Swipe" forState:UIControlStateNormal];
+        }
     }
 }
 
 -(IBAction) buttonLED:(id)sender
 {
-    if( [LilitabSDK singleton].ledState == LED_Off )
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    if( [acc conformsToProtocol:@protocol(LilitabReaderLED)] )
     {
-        [LilitabSDK singleton].ledState = LED_On;
-    }else{
-        [LilitabSDK singleton].ledState = LED_Off;
+        LilitabAccessory<LilitabReaderLED>* accLed = (LilitabAccessory<LilitabReaderLED>*)acc;
+        if( accLed.ledState == LED_Off )
+        {
+            accLed.ledState = LED_On;
+        }else{
+            accLed.ledState = LED_Off;
+        }
     }
 }
 
@@ -63,14 +73,18 @@
     self.swipeButton.enabled = YES;
     self.ledButton.enabled = YES;
     
-    [LilitabSDK singleton].swipeTimeout = 10;
-    [LilitabSDK singleton].swipeBlock = ^(NSDictionary* swipeData)
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    if( acc != nil )
+    {
+        acc.swipeTimeout = 10;
+        acc.swipeBlock = ^(NSDictionary* swipeData)
                                         {
                                             NSLog(@"swipeData = %@",swipeData);
                                             self.outputTextView.text = [NSString stringWithFormat:@"swipeData = %@",swipeData];
                                             
                                             [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
                                         };
+    }
 }
 
 -(void) accessoryDidDisconnect:(NSNotification*)notification
@@ -83,12 +97,16 @@
     
     [self.swipeButton setTitle:@"Enable Swipe" forState:UIControlStateNormal];
     
-    [LilitabSDK singleton].swipeBlock = NULL;
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    if( acc != nil )
+    {
+        acc.swipeBlock = NULL;
+    }
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.outputTextView.text = [NSString stringWithFormat:@"LilitabSDK version %@",LilitabSDK.singleton.version];
+    self.outputTextView.text = [NSString stringWithFormat:@"LilitabSDK version %@",LilitabSDK.version];
 }
 
 -(void) viewDidLoad
@@ -97,17 +115,23 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(accessoryDidConnect:)
-                                                 name:LilitabSDK_DidConnectNotification
+                                                 name:LilitabAccessories.didConnectNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(accessoryDidDisconnect:)
-                                                 name:LilitabSDK_DidDisconnectNotification
+                                                 name:LilitabAccessories.didDisconnectNotification
                                                object:nil];
     
-    [[LilitabSDK singleton] scanForConnectedAccessories];
+    LilitabAccessories* accessories = [LilitabAccessories new];
+    [accessories scanForConnectedAccessories];
     
-    [LilitabSDK singleton].ledState = LED_Off;
+    LilitabAccessory<LilitabCardReader>* acc = [LilitabAccessories getFirstSwipe];
+    if( [acc conformsToProtocol:@protocol(LilitabReaderLED)] )
+    {
+        LilitabAccessory<LilitabReaderLED>* accLed = (LilitabAccessory<LilitabReaderLED>*)acc;
+        accLed.ledState = LED_Off;
+    }
 }
 
 @end

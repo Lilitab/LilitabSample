@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,8 @@
 		0A19FFE01D08B5A900B98414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFDE1D08B5A900B98414 /* Main.storyboard */; };
 		0A19FFE21D08B5A900B98414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE11D08B5A900B98414 /* Assets.xcassets */; };
 		0A19FFE51D08B5A900B98414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE31D08B5A900B98414 /* LaunchScreen.storyboard */; };
-		0AFAD9B61D11D1AB0016E17A /* LilitabSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */; };
-		0AFAD9B81D11D2240016E17A /* LilitabSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A9CF54B2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */; };
+		0A9CF54C2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0AFAD9B81D11D2240016E17A /* LilitabSDK.framework in Embed Frameworks */,
+				0A9CF54C2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 		0A19FFE11D08B5A900B98414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A19FFE41D08B5A900B98414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A19FFE61D08B5A900B98414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LilitabSDK.framework; sourceTree = "<group>"; };
+		0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LilitabSDK.3.0.1.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AFAD9B61D11D1AB0016E17A /* LilitabSDK.framework in Frameworks */,
+				0A9CF54B2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +81,10 @@
 				0A19FFDB1D08B5A900B98414 /* ViewController.h */,
 				0A19FFDC1D08B5A900B98414 /* ViewController.m */,
 				0A19FFDE1D08B5A900B98414 /* Main.storyboard */,
-				0A19FFEF1D08B79B00B98414 /* LilitabSDK */,
 				0A19FFE11D08B5A900B98414 /* Assets.xcassets */,
 				0A19FFE31D08B5A900B98414 /* LaunchScreen.storyboard */,
 				0A19FFE61D08B5A900B98414 /* Info.plist */,
+				0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */,
 				0A19FFD51D08B5A900B98414 /* Supporting Files */,
 			);
 			path = LilitabSample;
@@ -96,14 +96,6 @@
 				0A19FFD61D08B5A900B98414 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0A19FFEF1D08B79B00B98414 /* LilitabSDK */ = {
-			isa = PBXGroup;
-			children = (
-				0AFAD9B51D11D1AB0016E17A /* LilitabSDK.framework */,
-			);
-			name = LilitabSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +136,7 @@
 			};
 			buildConfigurationList = 0A19FFCD1D08B5A900B98414 /* Build configuration list for PBXProject "LilitabSample" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -210,6 +202,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -229,6 +222,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -254,7 +248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -266,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -285,6 +280,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -304,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,14 +312,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A5E3G7BXTH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LilitabSample",
 				);
 				INFOPLIST_FILE = LilitabSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LilitabSample",
@@ -337,14 +337,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = A5E3G7BXTH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LilitabSample",
 				);
 				INFOPLIST_FILE = LilitabSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LilitabSample",
