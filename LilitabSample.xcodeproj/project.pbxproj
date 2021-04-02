@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0E28712617C5840064E29A /* LilitabSDK.3.0.3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0E286F2617C5730064E29A /* LilitabSDK.3.0.3.xcframework */; };
+		0A0E28722617C5840064E29A /* LilitabSDK.3.0.3.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0E286F2617C5730064E29A /* LilitabSDK.3.0.3.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A19FFD71D08B5A900B98414 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FFD61D08B5A900B98414 /* main.m */; };
 		0A19FFDA1D08B5A900B98414 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FFD91D08B5A900B98414 /* AppDelegate.m */; };
 		0A19FFDD1D08B5A900B98414 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A19FFDC1D08B5A900B98414 /* ViewController.m */; };
 		0A19FFE01D08B5A900B98414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFDE1D08B5A900B98414 /* Main.storyboard */; };
 		0A19FFE21D08B5A900B98414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE11D08B5A900B98414 /* Assets.xcassets */; };
 		0A19FFE51D08B5A900B98414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A19FFE31D08B5A900B98414 /* LaunchScreen.storyboard */; };
-		0A9CF54B2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */; };
-		0A9CF54C2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0A9CF54C2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Embed Frameworks */,
+				0A0E28722617C5840064E29A /* LilitabSDK.3.0.3.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A0E286F2617C5730064E29A /* LilitabSDK.3.0.3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LilitabSDK.3.0.3.xcframework; sourceTree = "<group>"; };
 		0A19FFD21D08B5A900B98414 /* LilitabSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LilitabSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A19FFD61D08B5A900B98414 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A19FFD81D08B5A900B98414 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		0A19FFE11D08B5A900B98414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A19FFE41D08B5A900B98414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A19FFE61D08B5A900B98414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LilitabSDK.3.0.1.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9CF54B2602632500AC2C75 /* LilitabSDK.3.0.1.xcframework in Frameworks */,
+				0A0E28712617C5840064E29A /* LilitabSDK.3.0.3.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 				0A19FFE11D08B5A900B98414 /* Assets.xcassets */,
 				0A19FFE31D08B5A900B98414 /* LaunchScreen.storyboard */,
 				0A19FFE61D08B5A900B98414 /* Info.plist */,
-				0A1D1A7C26025F410017F449 /* LilitabSDK.3.0.1.xcframework */,
+				0A0E286F2617C5730064E29A /* LilitabSDK.3.0.3.xcframework */,
 				0A19FFD51D08B5A900B98414 /* Supporting Files */,
 			);
 			path = LilitabSample;
